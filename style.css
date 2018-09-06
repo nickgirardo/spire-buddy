@@ -74,8 +74,70 @@ header span.nav-item:hover {
     grid-gap: 10px;
 }
 
+.relic-sidebar {
+    display: none;
+}
+
+.relic:hover .relic-sidebar {
+    display: block;
+
+    position: fixed;
+    top: 50px;
+    left: 0px;
+
+    width: 300px;
+    padding: 10px;
+}
+
 .relic {
     width: 64px;
     height: 64px;
     background-color: blue;
+}
+
+.relic .relic-name {
+
+}
+
+.relic .ironclad-only::before {
+    color: red;
+    content: 'This relic can only be acquired by the Ironclad!';
+}
+
+.relic .silent-only::before {
+    color: green;
+    content: 'This relic can only be acquired by the Silent!';
+}
+
+.relic .defect-only::before {
+    color: blue;
+    content: 'This relic can only be acquired by the Defect!';
+}
+
+/* Relic highlighting */
+.relic .hl-number {
+    color: blue;
+}
+
+.relic .hl-keyword {
+    color: gold;
+}
+
+/* Relic keywords */
+/* TODO
+ * Not sure if I'm going to keep this system because it cannot do highlighting within descriptions (by any method I'm aware of)
+ * for instance, 'Evoked' in the description of Channel should be highlighted
+ */
+.relic .keyword-channel::before {
+    content: 'Channel';
+}
+.relic .keyword-channel-desc::before {
+    content: 'Channeling an Orb puts it into your first empty slot.  If you have no empty slots your first Orb is automatically Evoked to make room.';
+}
+
+.relic .keyword-lightning::before {
+    content: 'Lightning';
+}
+.relic .keyword-lightning-desc::before {
+    content: 'Orb: Deals damage to random enemies.';
 }
