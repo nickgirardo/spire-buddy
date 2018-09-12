@@ -92,7 +92,6 @@ header span.nav-item:hover {
 .relic {
     width: 64px;
     height: 64px;
-    background-color: blue;
 }
 
 .relic .relic-name {
@@ -121,6 +120,14 @@ header span.nav-item:hover {
 
 .relic .hl-keyword {
     color: gold;
+}
+
+.relic .hl-red {
+    color: red;
+}
+
+.relic .hl-green {
+    color: green;
 }
 
 /* Relic keywords */
