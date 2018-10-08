@@ -70,7 +70,7 @@ header span.nav-item:hover {
 
 .relic-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
     grid-gap: 10px;
 }
 
@@ -90,8 +90,8 @@ header span.nav-item:hover {
 }
 
 .relic {
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    height: 32px;
 }
 
 .relic .relic-name {
