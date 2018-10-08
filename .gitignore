@@ -1,3 +1,6 @@
+# Not adding relic images for copyright reasons
+relics/
+
 # vim swap files
 *.swp
 *.swo
