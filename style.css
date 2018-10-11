@@ -1,12 +1,23 @@
-/*
- * TODO
- *
- * All colors need tweaking
- *
- */
+
+:root {
+    --bg-dark: #1b1a32;
+
+    --header-dark: var(--bg-dark);
+    --header-mid: darkgrey;
+    --header-light: lightgrey;
+
+    --text-gold: #e3be4d;
+    --text-white: lightgrey;
+
+    /* TODO Please get better colors for these */
+    --text-red: red;
+    --text-blue: blue;
+    --text-green: green;
+
+}
 
 body {
-    background-color: grey;
+    background-color: var(--header-dark);
     margin: 0;
     padding: 0;
 }
@@ -15,7 +26,7 @@ header {
     height: 50px;
     position: fixed;
     width: 100%;
-    background-color: lightgrey;
+    background-color: var(--header-light);
 }
 
 header a {
@@ -43,16 +54,17 @@ header span.title {
     text-transform: uppercase;
     font-family: sans-serif;
     font-size: 16px;
+    color: var(--text-gold);
 
-    background-color: grey;
+    background-color: var(--bg-dark);
 }
 
 header span.active {
-    background-color: darkgrey;
+    background-color: var(--header-mid);
 }
 
 header span.nav-item:hover {
-    background-color: darkgrey;
+    background-color: var(--header-mid);
 }
 
 .main {
@@ -65,17 +77,33 @@ header span.nav-item:hover {
 }
 
 .relic-cat {
-    padding-bottom: 32px;
+    padding: 32px 0 18px 0;
+}
+
+.relic-cat-name {
+    color: var(--text-gold);
+    font-size: larger;
+}
+
+.relic-cat-name::after {
+    content: ":";
+}
+
+.relic-cat-desc {
+    color: var(--text-white);
 }
 
 .relic-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
     grid-gap: 10px;
+
+    padding-top: 0.5em;
 }
 
 .relic-sidebar {
     display: none;
+    color: var(--text-white);
 }
 
 .relic:hover .relic-sidebar {
@@ -99,35 +127,35 @@ header span.nav-item:hover {
 }
 
 .relic .ironclad-only::before {
-    color: red;
+    color: var(--text-red);
     content: 'This relic can only be acquired by the Ironclad!';
 }
 
 .relic .silent-only::before {
-    color: green;
+    color: var(--text-green);
     content: 'This relic can only be acquired by the Silent!';
 }
 
 .relic .defect-only::before {
-    color: blue;
+    color: var(--text-blue);
     content: 'This relic can only be acquired by the Defect!';
 }
 
 /* Relic highlighting */
 .relic .hl-number {
-    color: blue;
+    color: var(--text-blue);
 }
 
 .relic .hl-keyword {
-    color: gold;
+    color: var(--text-gold);
 }
 
 .relic .hl-red {
-    color: red;
+    color: var(--text-red);
 }
 
 .relic .hl-green {
-    color: green;
+    color: var(--text-green);
 }
 
 /* Relic keywords */
