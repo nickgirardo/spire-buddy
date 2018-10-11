@@ -1,4 +1,8 @@
 
+/*
+ * TODO probably use a compile to css lang for readability and such
+ * TODO probably use vars/ macros of some sort for font sizing
+ */
 :root {
     --bg-dark: #1b1a32;
 
@@ -8,11 +12,9 @@
 
     --text-gold: #e3be4d;
     --text-white: lightgrey;
-
-    /* TODO Please get better colors for these */
-    --text-red: red;
-    --text-blue: blue;
-    --text-green: green;
+    --text-red: #fd6462;
+    --text-blue: #83c8e4;
+    --text-green: #5cae03;
 
 }
 
@@ -122,10 +124,6 @@ header span.nav-item:hover {
     height: 32px;
 }
 
-.relic .relic-name {
-
-}
-
 .relic .ironclad-only::before {
     color: var(--text-red);
     content: 'This relic can only be acquired by the Ironclad!';
@@ -139,6 +137,15 @@ header span.nav-item:hover {
 .relic .defect-only::before {
     color: var(--text-blue);
     content: 'This relic can only be acquired by the Defect!';
+}
+
+.relic .relic-name {
+    color: var(--text-gold);
+    font-size: large;
+}
+
+.relic .relic-flavor {
+    font-style: italic;
 }
 
 /* Relic highlighting */
