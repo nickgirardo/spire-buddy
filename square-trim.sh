@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Takes a directory full of images and trims them to squares
+
 if   [ -d "$1" ]
     then cd "$1";
 else
@@ -9,14 +11,11 @@ fi
 
 for f in *.png
 do
-    # Don't re-trim already trimmed images
-    if [[ $f != *"-trim"* ]] ; then
-        width=`convert $f -trim -format "%w" info:`
-        height=`convert $f -trim -format "%h" info:`
-        max=$(( width > height ? width : height ))
+    width=`convert $f -trim -format "%w" info:`
+    height=`convert $f -trim -format "%h" info:`
+    max=$(( width > height ? width : height ))
 
-        convert $f -set filename:orig %t -trim -background None -gravity center -resize ${max}x${max} -extent ${max}x${max} %[filename:orig]-trim.png
+    convert $f -set filename:orig %t -trim -background None -gravity center -resize ${max}x${max} -extent ${max}x${max} %[filename:orig].png
 
-        echo Trimmed $f to ${max}x${max}
-    fi
+    echo Trimmed $f to ${max}x${max}
 done
