@@ -29,6 +29,10 @@ do
     fi
 done
 
+# Remove quotes from filenames
+# This just makes serving them up a bit more convenient
+rename -S \' "" "$OUT_DIR"/*
+
 # Finally, trim all copied images
 ./square-trim.sh $OUT_DIR
 
